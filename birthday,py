@@ -1,0 +1,39 @@
+import sys,time,os
+bday = {}
+
+def add(dic):
+    name = input('write the name of person\n')
+    dic[name] = input('write the birthday of the person\n')
+    os.system('cls')
+    
+def specBday(dic):
+    name = input('write the name of the person\n')
+    if name not in dic:
+        print('the name is not in database')
+        time.sleep(3)
+        os.system('cls')
+        return
+    else:
+        print(dic[name])
+        time.sleep(3)
+        os.system('cls')
+    
+def getAll(dic):
+    print(dic)
+    time.sleep(3)
+    os.system('cls  ')
+    
+    
+try:
+        while(True):    
+            num = input('1 - Get all Birthdays\n2 - Get a specific birthday\n3 - Add a Birthday\n')
+            if num == str(1):
+                getAll(bday)
+            elif num == str(2):
+                specBday(bday)
+            elif num == str(3):
+                add(bday)
+            
+except KeyboardInterrupt:
+    sys.exit()
+
